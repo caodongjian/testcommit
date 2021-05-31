@@ -1,0 +1,28 @@
+# Copyright 2020 - Nym Technologies SA <contact@nymtech.net>
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+name = "gateway-requests"
+version = "0.1.0"
+authors = ["Jedrzej Stuczynski <andrew@nymtech.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bs58 = "0.3"
+futures = "0.3"
+log = "0.4"
+nymsphinx = { path = "../../common/nymsphinx" }
+rand = { version = "0.7.3", features = ["wasm-bindgen"] }
+serde = { version = "1.0.104", features = ["derive"] }
+serde_json = "1.0.44"
+
+crypto = { path = "../../common/crypto" }
+pemstore = { path = "../../common/pemstore" }
+
+[dependencies.tungstenite]
+version = "0.13"
+default-features = false
+
+

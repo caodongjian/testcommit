@@ -1,0 +1,60 @@
+# Copyright 2020 - Nym Technologies SA <contact@nymtech.net>
+# SPDX-License-Identifier: Apache-2.0
+
+[profile.release]
+panic = "abort"
+opt-level = "s"
+
+[profile.dev]
+panic = "abort"
+
+[workspace]
+
+members = [
+    "clients/native",
+    "clients/native/websocket-requests",
+    "clients/socks5",
+    "clients/webassembly",
+    "clients/client-core",
+    "common/client-libs/gateway-client",
+    "common/client-libs/metrics-client",
+    "common/client-libs/mixnet-client",
+    "common/client-libs/validator-client",
+    "common/config",
+    "common/crypto",
+    "common/mixnet-contract",
+    "common/mixnode-common",
+    "common/nonexhaustive-delayqueue",
+    "common/nymsphinx",
+    "common/nymsphinx/acknowledgements",
+    "common/nymsphinx/addressing",
+    "common/nymsphinx/anonymous-replies",
+    "common/nymsphinx/chunking",
+    "common/nymsphinx/cover",
+    "common/nymsphinx/forwarding",
+    "common/nymsphinx/framing",
+    "common/nymsphinx/params",
+    "common/nymsphinx/types",
+    "common/pemstore",
+    "common/socks5/requests",
+    "common/socks5/proxy-helpers",
+    "common/topology",
+    "common/wasm-utils",
+    "gateway",
+    "gateway/gateway-requests",
+    "mixnode",
+    "network-monitor",
+    "service-providers/network-requester",
+]
+
+default-members = [
+    "clients/native",
+    "clients/socks5",
+#    "clients/webassembly",
+    "gateway",
+    "service-providers/network-requester",
+    "mixnode",
+    "network-monitor",
+]
+
+exclude = ["explorer"]

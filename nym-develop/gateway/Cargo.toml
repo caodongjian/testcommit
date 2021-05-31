@@ -1,0 +1,38 @@
+# Copyright 2020 - Nym Technologies SA <contact@nymtech.net>
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+name = "nym-gateway"
+version = "0.10.1"
+authors = ["Dave Hrycyszyn <futurechimp@users.noreply.github.com>", "Jędrzej Stuczyński <andrew@nymtech.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.33.0"
+dirs = "3.0"
+dashmap = "4.0"
+dotenv = "0.15.0"
+futures = "0.3"
+humantime-serde = "1.0.1"
+log = "0.4"
+pretty_env_logger = "0.4"
+rand = "0.7"
+serde = { version = "1.0.104", features = ["derive"] }
+sled = "0.34"
+tokio = { version = "1.4", features = [ "rt-multi-thread", "net", "signal", "fs" ] }
+tokio-util = { version = "0.6", features = [ "codec" ] }
+tokio-stream = { version = "0.1", features = [ "fs" ] }
+tokio-tungstenite = "0.14"
+
+# internal
+config = { path = "../common/config" }
+crypto = { path = "../common/crypto" }
+gateway-requests = { path = "gateway-requests" }
+mixnet-client = { path = "../common/client-libs/mixnet-client" }
+mixnode-common = { path = "../common/mixnode-common" }
+nymsphinx = { path = "../common/nymsphinx" }
+pemstore = { path = "../common/pemstore" }
+validator-client = { path = "../common/client-libs/validator-client" }
+version-checker = { path = "../common/version-checker" }
